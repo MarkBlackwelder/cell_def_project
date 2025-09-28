@@ -2,7 +2,9 @@
 
 This student-led project will explore the concept of Cell Definitions for PhysiCell and how they might evolve.
 
-To get started, clone this repo. In your VSCode, use `File -> Open folder` to open the directory where you cloned it.  Then in your VSCode Terminal, try running these 3 commands (we are assuming you're on Windows):
+To get started, either clone or download this repo, or better yet, "fork" this repo into your own GitHub account and run it from there. 
+
+In your VSCode, use `File -> Open folder` to open the directory where you cloned it.  Then in your VSCode Terminal, try running these 3 commands (we are assuming you're on Windows):
 ```
 (base) PS C:\Users\randy\git\cell_def_project> python .\get_studio.py
 ...
