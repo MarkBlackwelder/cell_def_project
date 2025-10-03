@@ -22,3 +22,11 @@ If it all runs correctly, you should be able to click on the "Run" tab of the St
 We will start by taking a closer look at the XML, specifically the `<cell_definition ...` contents of the model and see how those parameters map into the Studio.
 
 <img src="./images/vscode_cell_defs.png"  width="50%">
+
+## MultiCellDS
+
+Multicellular Data Standard was an earlier effort that was a joint effort from several modeling frameworks. It is relevant for this project.
+
+https://www.biorxiv.org/content/10.1101/090456v2 
+
+https://www.biorxiv.org/content/10.1101/090696v1 
