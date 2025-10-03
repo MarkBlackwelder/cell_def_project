@@ -25,7 +25,7 @@ We will start by taking a closer look at the XML, specifically the `<cell_defini
 
 ## MultiCellDS
 
-Multicellular Data Standard was an earlier effort that was a joint effort from several modeling frameworks. It is relevant for this project.
+Multicellular Data Standard was an earlier project that was a joint effort from several modeling frameworks. It is relevant for this project.
 
 https://www.biorxiv.org/content/10.1101/090456v2 
 
