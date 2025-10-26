@@ -419,7 +419,7 @@
         <rulesets>
             <ruleset protocol="CBHG" version="3.0" format="csv" enabled="true">
                 <folder>config</folder>
-                <filename>pred_prey_rules.csv</filename>
+                <filename>pred_prey_rules3.csv</filename>
             </ruleset>
         </rulesets>
         <settings />
