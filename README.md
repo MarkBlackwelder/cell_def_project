@@ -30,3 +30,10 @@ Multicellular Data Standard was an earlier project that was a joint effort from 
 https://www.biorxiv.org/content/10.1101/090456v2 
 
 https://www.biorxiv.org/content/10.1101/090696v1 
+
+## Validating XML via Schematron, etc
+
+```
+pip install pyschematron
+(base) M1P~/git/cell_def_project/config$ pyschematron --svrl-out results.txt book_invalid.xml lib_book_rules.sch
+```
