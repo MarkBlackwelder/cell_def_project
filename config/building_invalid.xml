@@ -1,0 +1,7 @@
+<city:chicago xmlns:city="https://www.example.com/chicago">
+    <city:building>
+        <city:condemned>asdfas</city:condemned>
+        <city:inspection>-2</city:inspection>
+        <city:exits>0.01</city:exits>
+    </city:building>
+</city:chicago>

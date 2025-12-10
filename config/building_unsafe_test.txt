@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svrl:schematron-output xmlns:svrl="http://purl.oclc.org/dsdl/svrl" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:city="https://www.example.com/chicago" phase="#DEFAULT">
+  <svrl:ns-prefix-in-attribute-values prefix="city" uri="https://www.example.com/chicago"/>
+  <svrl:metadata xmlns:dct="http://purl.org/dc/terms/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:pysch="https://github.com/robbert-harms/pyschematron">
+    <dct:creator>
+      <dct:agent>
+        <skos:prefLabel>PySchematron 1.1.11</skos:prefLabel>
+      </dct:agent>
+    </dct:creator>
+    <dct:created>2025-12-10T14:48:43.425971-05:00</dct:created>
+    <dct:source>
+      <rdf:Description>
+        <dct:creator>
+          <dct:Agent>
+            <skos:prefLabel>PySchematron 1.1.11</skos:prefLabel>
+          </dct:Agent>
+        </dct:creator>
+        <dct:created>2025-12-10T14:48:43.425971-05:00</dct:created>
+      </rdf:Description>
+    </dct:source>
+  </svrl:metadata>
+  <svrl:active-pattern documents="file:file:/C:/Users/markj/Git/cell_def_project/config/building_unsafe.xml" name="Code validation"/>
+  <svrl:fired-rule context="city:building"/>
+  <svrl:failed-assert location="/Q{https://www.example.com/chicago}chicago[1]/Q{https://www.example.com/chicago}building[1]" test="city:exits = string(number(city:exits)) and (city:exits &gt; 0 and city:exits mod 1 = 0)">
+    <svrl:text>Invalid entry for number of fire exits, not a positive integer</svrl:text>
+  </svrl:failed-assert>
+  <svrl:successful-report location="/Q{https://www.example.com/chicago}chicago[1]/Q{https://www.example.com/chicago}building[1]" test="city:condemned = 'True'">
+    <svrl:text>Unsafe building due to being condemned, not held up to code</svrl:text>
+  </svrl:successful-report>
+  <svrl:successful-report location="/Q{https://www.example.com/chicago}chicago[1]/Q{https://www.example.com/chicago}building[1]" test="city:inspection &gt; 1">
+    <svrl:text>Unsafe building due to not being inspected within a year</svrl:text>
+  </svrl:successful-report>
+  <svrl:successful-report location="/Q{https://www.example.com/chicago}chicago[1]/Q{https://www.example.com/chicago}building[1]" test="city:exits &lt; 2 and city:exits mod 1 = 0">
+    <svrl:text>Unsafe building due to not having enough fire exits</svrl:text>
+  </svrl:successful-report>
+</svrl:schematron-output>
