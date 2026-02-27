@@ -31,9 +31,17 @@ https://www.biorxiv.org/content/10.1101/090456v2
 
 https://www.biorxiv.org/content/10.1101/090696v1 
 
-## Validating XML via Schematron, etc
+## Validating XML via Schematron
 
 ```
 pip install pyschematron
 (base) M1P~/git/cell_def_project/config$ pyschematron --svrl-out results.txt book_invalid.xml lib_book_rules.sch
+```
+
+## Validating XML via XML Schema and lxml
+
+```
+# In /config, try to run and experiment with:
+python validate_model.py model_bad_1.xml
+python validate_model.py model_good_1.xml
 ```
