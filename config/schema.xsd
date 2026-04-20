@@ -84,8 +84,8 @@
     <xs:all>
       <xs:element name="substrate" type="xs:string"/>
       <xs:element name="colormap" type="xs:string" minOccurs="0"/>
-      <xs:element name="min_conc" type="xs:double" minOccurs="0"/>
-      <xs:element name="max_conc" type="xs:double" minOccurs="0"/>
+      <xs:element name="min_conc" type="OptionalDouble" minOccurs="0"/>
+      <xs:element name="max_conc" type="OptionalDouble" minOccurs="0"/>
     </xs:all>
     <xs:attribute name="enabled" type="xs:boolean" use="optional"/>
     <xs:attribute name="limits" type="xs:boolean" use="optional"/>
@@ -522,6 +522,20 @@
   </xs:complexType>
 
   <!-- ==================== SHARED / REUSABLE TYPES ==================== -->
+
+  <!-- Double that also accepts an empty string (e.g. optional numeric fields left blank) -->
+  <xs:simpleType name="OptionalDouble">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:length value="0"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:double"/>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
 
   <!-- Generic element that holds a double value plus optional units attribute -->
   <xs:complexType name="ValueWithUnits">
