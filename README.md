@@ -31,6 +31,15 @@ https://www.biorxiv.org/content/10.1101/090456v2
 
 https://www.biorxiv.org/content/10.1101/090696v1 
 
+## Validating XML via xmllint
+
+```
+xmllint --schema schema.xsd model_good_1.xml
+xmllint --schema schema.xsd model_bad_1.xml
+xmllint --schema schema.xsd model_good_1.xml
+xmllint --schema schema.xsd model_bad_1.xml
+```
+
 ## Validating XML via Schematron
 
 ```
