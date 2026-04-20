@@ -208,24 +208,15 @@
     </xs:all>
   </xs:complexType>
 
-  <!-- rf. /core/PhysiCell_constants.cpp -->
-
   <!-- Cycle -->
   <xs:complexType name="CycleType">
     <xs:all>
       <xs:element name="phase_durations" type="PhaseDurationsType"/>
       <xs:element name="standard_asymmetric_division" type="AsymmetricDivisionType" minOccurs="0"/>
     </xs:all>
-    <xs:attribute name="code" type="CycleCodeType" use="optional"/>
+    <xs:attribute name="code" type="xs:integer" use="optional"/>
     <xs:attribute name="name" type="xs:string" use="optional"/>
   </xs:complexType>
-
-  <xs:simpleType name="CycleCodeType">
-    <xs:restriction base="xs:integer">
-      <xs:minInclusive value="0"/>
-      <xs:maxInclusive value="7"/>
-    </xs:restriction>
-  </xs:simpleType>
 
   <xs:complexType name="PhaseDurationsType">
     <xs:sequence>
