@@ -35,7 +35,7 @@
         <SVG>
             <interval units="min">60</interval>
             <enable>true</enable>
-            <plot_substrate enabled="false" limits="False">
+            <plot_substrate enabled="false" limits="false">
                 <substrate>substrate</substrate>
                 <min_conc />
                 <max_conc />
