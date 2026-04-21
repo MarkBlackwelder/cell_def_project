@@ -1,0 +1,97 @@
+%!PS-Adobe-
+%%DocumentFonts: Courier Courier-Bold
+% PSP prologue file, version 1.0
+%
+% Copyright (c) 1989 Eric J. Kostelich
+%
+save
+/PSPstart {} def
+/p {	3 1 roll
+	Linespacing mul Textoffset exch sub
+	exch Textwidth Leftmargin add mul Leftmargin add
+	exch moveto show 
+} def
+
+/Setbold { /Courier-Bold findfont Boldsize scalefont setfont } def
+/SF { /Courier findfont Pointsize scalefont setfont } def
+%
+% (string) H  - for placing boldface titles
+%
+/H { Setbold Leftmargin Titleoffset moveto show SF } def
+%
+%  Normal mode - use titles, 54 lines/page
+%
+/Usual {/Leftmargin 66 def  /Textoffset 708 def /Titleoffset 738 def
+	/Boldsize 12 def  /Pointsize 10 def /Linespacing 12 def
+	/Textwidth 480 def /Rotatemode false def
+} def
+%
+%  Plain mode - no titles, 66 lines/page
+%
+/Plain {/Leftmargin 72 def  /Textoffset 756 def
+	/Boldsize 14 def  /Pointsize 9 def /Linespacing 11 def
+	/Textwidth 480 def /Rotatemode false def
+} def
+%
+% Rotated, two-column mode - 65 lines/column
+%
+/Rotated { /Rotatemode true def } def
+/Rotatepage { 612 0 translate 90 rotate
+	/Leftmargin 36 def /Textoffset 550 def /Titleoffset 568 def
+	/Boldsize 12 def  /Pointsize 7 def  /Linespacing 8 def
+	/Textwidth 336 def
+} def
+/Startpage { Rotatemode {Rotatepage} if SF } def
+/Endpage {showpage} def
+/PSPend {restore} def
+%%EndPrologue
+Rotated
+%%Page 1 1
+Startpage
+(pred_prey_rules_v2.xml                                            Wed Nov 19 12:30:52 2025
+       1)H
+0 0(<PhysiCell_settings version="devel-version">)p
+0 2(        <metadata>)p
+0 3(                <dependencies>)p
+0 4(                        <expected_cell_types>   <!-- expected vs. required ?? --)p
+0 5(>)p
+0 6(                        </expected_cell_types>)p
+0 7(                        <expected_microenvironmental_signals>)p
+0 8(                        </expected_microenvironmental_signals>)p
+0 9(                </dependencies>)p
+0 10(        </metadata>)p
+0 12(    <base_signals> <!-- [S0] -->)p
+0 13(                <!-- <signal name="oxygen" identifier="O2" ontology="ChEBI" valu)p
+0 14(e="8" units="mmHg" />  -->)p
+0 15(        </base_signals>)p
+0 17(        <base_phenotype> <!-- [B0 -->)p
+0 18(        <!-- look at MultiCellDS and also PhysiCell version -->)p
+0 19(        </base_phenotype>)p
+0 21(    <cell_definitions>)p
+0 22(        <cell_definition name="prey" ID="0">)p
+0 23(            <cell_rules standard="CBHG" version="4.0">)p
+0 24(                <rules enabled="true">)p
+0 25(                    <rule signal="contact with predator" behavior="cycle entry")p
+0 26(maximal_behavior="0.5" type="Hill" half_max="4.0" Hill_power="4" enabled="true")p
+0 27(comment="allow offspring" />)p
+0 28(                </rules>)p
+0 29(            </cell_rules>)p
+0 30(        </cell_definition>)p
+0 32(        <cell_definition name="predator" ID="1">)p
+0 33(            <cell_rules standard="CBHG" version="4.0">)p
+0 34(                <rules enabled="true">)p
+0 35(                    <!-- predator,contact with prey,increases,phagocytose prey,0)p
+0 36(.2,0.5,4,0  -->)p
+0 37(                    <rule signal="contact with prey" behavior="phagocytose prey")p
+0 38( maximal_behavior="0.2" type="Hill" half_max="0.5" Hill_power="4" enabled="true")p
+0 39( comment="predator eats prey" />)p
+0 40(                    <rule signal="contact with predator" behavior="cycle entry")p
+0 41(maximal_behavior="0.5" type="Hill" half_max="4.0" Hill_power="4" enabled="true")p
+0 42(comment="allow offspring" />)p
+0 43(                </rules>)p
+0 44(            </cell_rules>)p
+0 45(        </cell_definition>)p
+0 46(    </cell_definitions>)p
+Endpage
+%%Trailer
+PSPend

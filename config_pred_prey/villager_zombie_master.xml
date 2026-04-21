@@ -184,7 +184,7 @@
                             <direction>1</direction>
                         </chemotaxis>
                         <advanced_chemotaxis>
-                            <enabled>true</enabled>
+                            <enabled>false</enabled>
                             <normalize_each_gradient>true</normalize_each_gradient>
                             <chemotactic_sensitivities>
                                 <chemotactic_sensitivity substrate="quorum">1.0</chemotactic_sensitivity>
@@ -321,7 +321,7 @@
                         <enabled>true</enabled>
                         <use_2D>true</use_2D>
                         <chemotaxis>
-                            <enabled>true</enabled>
+                            <enabled>false</enabled>
                             <substrate>quorum</substrate>
                             <direction>1</direction>
                         </chemotaxis>
@@ -330,7 +330,7 @@
                             <normalize_each_gradient>false</normalize_each_gradient>
                             <chemotactic_sensitivities>
                                 <chemotactic_sensitivity substrate="quorum">0.0</chemotactic_sensitivity>
-                                <chemotactic_sensitivity substrate="zombie" />
+                                <chemotactic_sensitivity substrate="zombie">-1</chemotactic_sensitivity>
                             </chemotactic_sensitivities>
                         </advanced_chemotaxis>
                     </options>
@@ -358,7 +358,7 @@
                         <phagocytosis_rate name="zombie" units="1/min">0</phagocytosis_rate>
                     </live_phagocytosis_rates>
                     <attack_rates>
-                        <attack_rate name="villager" units="1/min">1</attack_rate>
+                        <attack_rate name="villager" units="1/min">0</attack_rate>
                         <attack_rate name="zombie" units="1/min">0</attack_rate>
                     </attack_rates>
                     <attack_damage_rate units="1/min">1</attack_damage_rate>
