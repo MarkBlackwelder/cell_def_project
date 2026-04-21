@@ -1,0 +1,7 @@
+<lib:library xmlns:lib="http://www.example.com/library">
+  <lib:book>
+    <lib:isbn>978-0321765723</lib:isbn>
+    <lib:title>The Lord of the Rings</lib:title>
+    <lib:price>450</lib:price>
+  </lib:book>
+</lib:library>

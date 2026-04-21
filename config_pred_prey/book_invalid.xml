@@ -1,0 +1,8 @@
+<lib:library xmlns:lib="http://www.example.com/library">
+  <lib:book>
+    <lib:isbn>978-0131495081</lib:isbn>
+    <!-- Missing title -->
+    <lib:price>5</lib:price> <!-- Price is too low -->
+  </lib:book>
+</lib:library>
+
