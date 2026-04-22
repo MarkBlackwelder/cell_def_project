@@ -13,7 +13,6 @@
         <xs:element name="microenvironment_setup" type="MicroenvironmentSetupType"/>
         <xs:element name="cell_definitions" type="CellDefinitionsType"/>
         <xs:element name="initial_conditions" type="InitialConditionsType"/>
-        <xs:element name="cell_rules" type="CellRulesType"/>
         <xs:element name="user_parameters" type="UserParametersType"/>
       </xs:sequence>
       <xs:attribute name="version" type="xs:string" use="optional"/>
@@ -186,11 +185,33 @@
   <xs:complexType name="CellDefinitionType">
     <xs:all>
       <xs:element name="phenotype" type="PhenotypeType"/>
+      <xs:element name="cell_rules" type="CellDefinitionRulesType" minOccurs="0"/>
       <xs:element name="custom_data" type="CustomDataType" minOccurs="0"/>
       <xs:element name="initial_parameter_distributions" type="InitialParameterDistributionsType" minOccurs="0"/>
     </xs:all>
     <xs:attribute name="name" type="xs:string" use="required"/>
     <xs:attribute name="ID" type="xs:nonNegativeInteger" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="CellDefinitionRulesType">
+    <xs:sequence>
+      <xs:element name="rule" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="signal" type="xs:string" use="required"/>
+          <xs:attribute name="behavior" type="xs:string" use="required"/>
+          <xs:attribute name="maximal_behavior" type="xs:double" use="optional"/>
+          <xs:attribute name="type" type="xs:string" use="optional"/>
+          <xs:attribute name="half_max" type="xs:double" use="optional"/>
+          <xs:attribute name="Hill_power" type="xs:double" use="optional"/>
+          <xs:attribute name="enabled" type="xs:boolean" use="optional"/>
+          <xs:attribute name="comment" type="xs:string" use="optional"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="protocol" type="xs:string" use="optional"/>
+    <xs:attribute name="version" type="xs:string" use="optional"/>
+    <xs:attribute name="format" type="xs:string" use="optional"/>
+    <xs:attribute name="enabled" type="xs:boolean" use="optional"/>
   </xs:complexType>
 
   <!-- Phenotype -->
@@ -504,31 +525,6 @@
       <xs:element name="filename" type="xs:string"/>
     </xs:all>
     <xs:attribute name="type" type="xs:string" use="optional"/>
-    <xs:attribute name="enabled" type="xs:boolean" use="optional"/>
-  </xs:complexType>
-
-  <!-- ==================== CELL RULES ==================== -->
-  <xs:complexType name="CellRulesType">
-    <xs:all>
-      <xs:element name="rulesets" type="RulesetsType" minOccurs="0"/>
-      <xs:element name="settings" type="xs:anyType" minOccurs="0"/>
-    </xs:all>
-  </xs:complexType>
-
-  <xs:complexType name="RulesetsType">
-    <xs:sequence>
-      <xs:element name="ruleset" type="RulesetType" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="RulesetType">
-    <xs:all>
-      <xs:element name="folder" type="xs:string"/>
-      <xs:element name="filename" type="xs:string"/>
-    </xs:all>
-    <xs:attribute name="protocol" type="xs:string" use="optional"/>
-    <xs:attribute name="version" type="xs:string" use="optional"/>
-    <xs:attribute name="format" type="xs:string" use="optional"/>
     <xs:attribute name="enabled" type="xs:boolean" use="optional"/>
   </xs:complexType>
 
