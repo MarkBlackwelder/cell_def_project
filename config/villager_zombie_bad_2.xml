@@ -330,7 +330,7 @@
                             <normalize_each_gradient>false</normalize_each_gradient>
                             <chemotactic_sensitivities>
                                 <chemotactic_sensitivity substrate="quorum">0.0</chemotactic_sensitivity>
-                                <chemotactic_sensitivity substrate="zombie">0.0</chemotactic_sensitivity>
+                                <chemotactic_sensitivity substrate="zombie" />
                             </chemotactic_sensitivities>
                         </advanced_chemotaxis>
                     </options>
