@@ -213,7 +213,8 @@
   <!-- Cycle -->
   <xs:complexType name="CycleType">
     <xs:all>
-      <xs:element name="phase_durations" type="PhaseDurationsType"/>
+      <xs:element name="phase_durations" type="PhaseDurationsType" minOccurs="0"/>
+      <xs:element name="phase_transition_rates" type="PhaseTransitionRatesType" minOccurs="0"/>
       <xs:element name="standard_asymmetric_division" type="AsymmetricDivisionType" minOccurs="0"/>
     </xs:all>
     <xs:attribute name="code" type="CycleCodeType" use="optional"/>
@@ -234,6 +235,23 @@
           <xs:simpleContent>
             <xs:extension base="xs:double">
               <xs:attribute name="index" type="xs:nonNegativeInteger" use="required"/>
+              <xs:attribute name="fixed_duration" type="xs:boolean" use="optional"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="units" type="xs:string" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="PhaseTransitionRatesType">
+    <xs:sequence>
+      <xs:element name="rate" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:double">
+              <xs:attribute name="start_index" type="xs:nonNegativeInteger" use="required"/>
+              <xs:attribute name="end_index" type="xs:nonNegativeInteger" use="optional"/>
               <xs:attribute name="fixed_duration" type="xs:boolean" use="optional"/>
             </xs:extension>
           </xs:simpleContent>
